@@ -1,19 +1,27 @@
 
 <!--начало FOOTER-->
 <div class="footer-wrapper">
+	<?php $args = array( 'category_name'=> 'service' ,'numberposts'=>4 , 'order'=>'ASC' );
+	$categories=get_posts($args);
+	$row=count($categories)/4;
+	/*print_r($categories);*/?>
 	<footer class="container">
 		<div class="row">
+			<h3>Услуги:</h3>
+			<?php $col=0; foreach($categories as $key => $value): ?>
+			<?php if (!$col) : ?>
 			<div class="col-lg-2 col-md-4 col-sm-6">
-				<h3>Услуги:</h3>
 				<ul>
-					<li><a href="#">Удаление родинок</a></li>
-					<li><a href="#">Удаление папиллом</a></li>
-					<li><a href="#">Удаление сосудистых здёздочек</a></li>
-					<li><a href="#">Удаление бородавок</a></li>
-					<li><a href="#">Фотоэпиляция</a></li>
+			<?php endif; ?>
+					<li><a href="<?=get_permalink($value->ID)?>"><?=$value->post_title?></a></li>
+			<?php $col++;  if ($col==$row) : $col=0; ?>
 				</ul>
 			</div>
+				<?php endif; ?>
+			<?php endforeach; ?>
 			<div class="col-lg-2 col-md-4 col-sm-6">
+			</div>
+<!--			<div class="col-lg-2 col-md-4 col-sm-6">
 				<ul>
 					<li><a href="#">Лазерная эпиляция</a></li>
 					<li><a href="#">Мезотерапия</a></li>
@@ -41,13 +49,12 @@
 					<li><a href="#">Подтяжка нитями</a></li>
 				</ul>
 			</div>
+
 			<div class="col-lg-2 col-md-4 col-sm-6">
-			</div>
+			</div>-->
 			<div class="col-lg-2 col-md-4 col-sm-6 address">
 				<h3>Адрес:</h3>
-				<p><a href="#">г.Алматы, <br>
-						ул. Прокофьева 89 А, <br>
-						(уг.ул. Толе би)</a></p>
+				<p><a href="#"><?=get_field('address',4) ?></a></p>
 				<button class="btn-company-style" data-toggle="modal" data-target="#serviceRequest">записаться на приём</button>
 			</div>
 		</div>
