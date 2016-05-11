@@ -8,9 +8,9 @@
 	<title>Красивая Работа | Главная</title>
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
+	<link href="<?php bloginfo('template_directory') ?>/public/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?php bloginfo('template_directory') ?>/public/css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+	<link href="<?php bloginfo('template_directory') ?>/public/css/styles.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -23,7 +23,7 @@
 <!-- начало HEADER -->
 <header class="container">
 	<img class="header__logo" src="<?=get_field('logo',4)?>" alt="Лого">
-	<p class="header__header-summary">Центр <br>эстетической медицины</p>
+	<p class="header__header-summary"><?=get_field('description',4) ?></p>
 	<div class="nav-and-phonenumbers">
 		<!--(начало) навменю -->
 		<div class="navbar navbar-default" role="navigation">
@@ -39,52 +39,35 @@
 			<div class="navbar-collapse collapse">
 				<!-- Left nav -->
 				<ul class="nav navbar-nav">
-					<li class="current"><a href="index.html">Главная</a></li>
-					<li><a href="about.html">Красивая работа</a></li>
-					<li><a href="services.html">Услуги</span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Коррекция дефектов кожи <span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Удаление родинок</a></li>
-									<li><a href="#">Удаление попиллом</a></li>
-									<li><a href="#">Удаление бородавок </a></li>
-									<li><a href="#">Удаление сосудистых<br>звездочек</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Лазерная шлифовка <span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Шлифовка лица</a></li>
-									<li><a href="#">Растяжки</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Фото-Лазерная эпиляция <span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Фотоэпиляция</a></li>
-									<li><a href="#">Лазерная эпиляция	</a></li>
-								</ul>
-							</li>
-							<li><a href="#">RF Лифтинг</a></li>
-							<li><a href="#">Антивозрастная косметология <span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Биоревитализация</a></li>
-									<li><a href="#">Мезотерапия</a></li>
-									<li><a href="#">Фотоомоложение</a></li>
-									<li><a href="#">Подтяжка нитями</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Плазмалифтинг <span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Лечение алопеции</a></li>
-									<li><a href="#">Омоложение собственной<br>плазмы</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Вакуумный лифтинг лица и тела</a></li>
-							<li><a href="#">Диспорт</a></li>
-							<li><a href="#">Лечение цилюлита</a></li>
-							<li><a href="#">Удаление татуировок и татуажа</a></li>
-						</ul>
-					</li>
-					<li><a href="contacts.html">Контакты</a></li>
+					<?php $menu=wp_get_nav_menu_items('main'); $title=get_post();/* print_r($menu);*/  foreach ($menu as $key=>$val) {
+							if (!$val->menu_item_parent){ $class='';  $title=get_post();
+								if($title->ID==$val->object_id){$class='active';} ?>
+						<li class="<?php echo $class;?>"><a href="<?=$val->url?>"><?=$val->title?></a>
+							<?php $col=0; foreach ($menu as $key1=>$val1) : if ($val1->menu_item_parent==$val->ID): $col++; endif; endforeach;
+							if ($col) :
+							?>
+							<ul class="dropdown-menu">
+							<?php foreach ($menu as $key1=>$val1) : if ($val1->menu_item_parent==$val->ID): ?>
+								<li class="<?php echo $class;?>"><a href="<?=$val1->url?>"><?=$val1->title?></a>
+									<?php $col1=0; foreach ($menu as $key2=>$val2) : if ($val2->menu_item_parent==$val1->ID): $col1++; endif; endforeach;
+									if ($col1) :
+										?>
+										<ul class="dropdown-menu">
+											<?php foreach ($menu as $key2=>$val2) : if ($val2->menu_item_parent==$val1->ID): ?>
+												<li class="<?php echo $class;?>"><a href="<?=$val2->url?>"><?=$val2->title?></a></li>
+											<?php endif; endforeach;?>
+										</ul>
+									<?php endif;?>
+								</li>
+							<?php endif; endforeach;?>
+							</ul>
+							<?php endif;?>
+						</li>
+					<?php }
+
+					}
+					?>
+
 				</ul>
 			</div><!--/.nav-collapse -->
 
@@ -92,8 +75,8 @@
 		<!--(конец) навменю -->
 
 		<div class="tel-numbers">
-			<a href="#" class="tel-numbers__cell-number">+7 707 105 54 11</a>
-			<a href="#" class="tel-numbers__fixed-number">+7 727 329 72 00</a>
+			<a href="tel:<?=get_field('phone1') ?>" class="tel-numbers__cell-number"><?=get_field('phone1') ?></a>
+			<a href="tel:<?=get_field('phone2') ?>" class="tel-numbers__fixed-number"><?=get_field('phone2') ?></a>
 		</div>
 	</div>
 </header>
