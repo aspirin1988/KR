@@ -1,9 +1,10 @@
 
 <!--начало FOOTER-->
 <div class="footer-wrapper">
-	<?php $args = array( 'category_name'=> 'service' ,'numberposts'=>4 , 'order'=>'ASC' );
+	<?php $args = array( 'category_name'=> 'service' ,'numberposts'=>20 , 'order'=>'ASC' );
+	$column=4;
 	$categories=get_posts($args);
-	$row=count($categories)/4;
+	$row=round(count($categories)/$column);
 	/*print_r($categories);*/?>
 	<footer class="container">
 		<div class="row">
@@ -14,13 +15,14 @@
 				<ul>
 			<?php endif; ?>
 					<li><a href="<?=get_permalink($value->ID)?>"><?=$value->post_title?></a></li>
-			<?php $col++;  if ($col==$row) : $col=0; ?>
+			<?php $col++;  if ($col==$row||$key==count($categories)-1) : $col=0; ?>
 				</ul>
 			</div>
 				<?php endif; ?>
-			<?php endforeach; ?>
-			<div class="col-lg-2 col-md-4 col-sm-6">
-			</div>
+			<?php endforeach;
+			?>
+			<!--<div class="col-lg-2 col-md-4 col-sm-6">
+			</div>-->
 <!--			<div class="col-lg-2 col-md-4 col-sm-6">
 				<ul>
 					<li><a href="#">Лазерная эпиляция</a></li>
@@ -55,8 +57,10 @@
 			<div class="col-lg-2 col-md-4 col-sm-6 address">
 				<h3>Адрес:</h3>
 				<p><a href="#"><?=get_field('address',4) ?></a></p>
+				<?php if (!is_category()) :?>
 				<button class="btn-company-style" data-toggle="modal" data-target="#serviceRequest">записаться на приём</button>
-			</div>
+				<?php endif;
+				?>
 		</div>
 	</footer>
 </div>
@@ -72,7 +76,7 @@
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4>Запись на прием в центр эстетической медицины <br>
 					«Красивая работа»</h4>
-				<form class="row">
+				<form class="row blink-mailer">
 					<h4>Пожалуйста, заполните форму</h4>
 					<div class="col-sm-6 col">
 						<input type="text" style="display: none;" name="title" value="Запись на приём">
@@ -91,8 +95,15 @@
 					</div>
 					<div class="col-sm-6 col">
 						<div class="form-group">
-							<label for="serviceType">Укажите  процедуру на которую  хотите записаться</label>
-							<input name="Процедура" type="text" class="form-control" id="serviceType" placeholder="название процедуры">
+							<label for="serviceType">Укажите процедуру на которую хотите записаться</label>
+							<select name="Процедура" type="text" class="form-control" id="serviceType"
+									placeholder="название процедуры">
+								<?php  $args = array( 'category_name'=> 'service' ,'numberposts'=>20 , 'order'=>'ASC' );
+								$categories=get_posts($args);
+								foreach($categories as $value): ?>
+									<option <?php if ($current_post->ID==$value->ID){ echo 'selected="selected"';}?> value="<?=$value->post_title?>" ><?=$value->post_title?></option>
+								<?php endforeach; ?>
+							</select>
 						</div>
 						<div class="form-group">
 							<label for="date">Выберите  желаемую дату посещения</label>
@@ -125,5 +136,16 @@
 <script type="text/javascript" src="<?php bloginfo('template_directory') ?>/public/js/jquery.smartmenus.js"></script>
 <!-- SmartMenus jQuery Bootstrap Addon -->
 <script type="text/javascript" src="<?php bloginfo('template_directory') ?>/public/js/jquery.smartmenus.bootstrap.js"></script>
+<script src="https://callback.blink.kz/resources/callback/js/mailer.js"></script>
+<script>
+	var submitSMG = new BMModule();
+	submitSMG.submitForm(function(success) { $('.blink-mailer input[type=submit]').val('Отправить'); }, function(error) {});
+</script>
+<script>
+	$('.container.before-after a').click(function(){
+		var src = $(this).find('img').attr('src');
+		$('#beforeAndAfterGallery img').attr('src',src);
+	});
+</script>
 </body>
 </html>

@@ -29,7 +29,6 @@
 <script src="<?php bloginfo('template_directory') ?>/public/js/uikit.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/lightbox.min.js"></script>
-<script src="https://callback.blink.kz/resources/callback/js/mailer.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/uikit.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slider.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slideshow.min.js"></script>
@@ -37,11 +36,10 @@
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/lightbox.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/datepicker.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/timepicker.js"></script>
+<script src="https://callback.blink.kz/resources/callback/js/mailer.js"></script>
 <script>
-	var submitSMG = new BMModule();
+var submitSMG = new BMModule();
 	submitSMG.submitForm(function(success) { $('.blink-mailer input[type=submit]').val('Отправить'); }, function(error) {});
-
-
 </script>
 <?=get_field('google',4)?>
 <?=get_field('yandex',4)?>
