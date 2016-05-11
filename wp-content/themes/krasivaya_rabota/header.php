@@ -75,8 +75,8 @@
 		<!--(конец) навменю -->
 
 		<div class="tel-numbers">
-			<a href="tel:<?=get_field('phone1') ?>" class="tel-numbers__cell-number"><?=get_field('phone1') ?></a>
-			<a href="tel:<?=get_field('phone2') ?>" class="tel-numbers__fixed-number"><?=get_field('phone2') ?></a>
+			<a href="tel:<?=get_field('phone1',4) ?>" class="tel-numbers__cell-number"><?=get_field('phone1',4) ?></a>
+			<a href="tel:<?=get_field('phone2',4) ?>" class="tel-numbers__fixed-number"><?=get_field('phone2',4) ?></a>
 		</div>
 	</div>
 </header>
