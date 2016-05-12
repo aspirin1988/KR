@@ -484,6 +484,8 @@ header {
       .panel-group .panel-heading + .panel-collapse > .panel-body ul li a:hover {
         background-color: #4fdc52;
         color: white; }
+  .panel-group .panel-heading + .panel-collapse > .panel-body ul li.active {
+    background: rgba(0, 0, 255, 0.3); }
 
 /* конец АККОРДЕОН И ТЕКСТ */
 /* начало ФОТО ДО И ПОСЛЕ */

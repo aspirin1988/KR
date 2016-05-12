@@ -44,10 +44,12 @@ $categories = get_categories( $args );
 							<div class="panel-body">
 								<ul>
 									<?php
+									$active=0;
+									if (!get_the_content()){$active=$post->ID;} else {$active=get_the_ID();}
 									$args = array( 'cat'=> $value->term_id ,'numberposts'=>20 , 'order'=>'ASC' );
 									$posts=get_posts($args);/* print_r($posts);*/
 									foreach ($posts as $value1 ){ ?>
-										<li><a href="<?=get_permalink($value1->ID)?>"><?php echo $value1->post_title;?></a></li>
+										<li<?php if ($active==$value1->ID) : ?> class="active"<?php endif; ?> ><a href="<?=get_permalink($value1->ID)?>"><?php echo $value1->post_title;?></a></li>
 									<?php } ?>
 								</ul>
 							</div>
@@ -60,7 +62,7 @@ $categories = get_categories( $args );
 		<div class="col-sm-8 text-center ">
 			<h3 class="text-right text-uppercase"><?=get_the_title()?></h3>
 			<img src="<?=get_the_post_thumbnail_url() ?>" >
-			<p><?php if(!get_the_content()){echo $post->post_content;} else{ echo get_the_content();}?></p>
+			<p><?php if(!get_the_content()){echo $post->post_content; $current_post=$post;} else{ echo get_the_content();}?></p>
 		</div>
 	</div>
 </div>

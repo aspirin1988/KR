@@ -693,6 +693,11 @@ header {
       }
     }
   }
+
+  ul li.active{
+    background: rgba(0,0,255,.3);
+  }
+
 }
 
 /* конец АККОРДЕОН И ТЕКСТ */

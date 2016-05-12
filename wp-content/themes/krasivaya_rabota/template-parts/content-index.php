@@ -1,7 +1,7 @@
 <!--начало ГЛАВНЫЙ БАННЕР-->
 <div class="banner-main">
 	<div class="container">
-		<?php the_field('slug') ?>
+		<?php the_field('slug',4) ?>
 	</div>
 </div>
 <!--начало ГЛАВНЫЙ БАННЕР-->
