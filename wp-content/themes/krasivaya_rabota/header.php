@@ -22,7 +22,7 @@
 
 <!-- начало HEADER -->
 <header class="container">
-	<img class="header__logo" src="<?=get_field('logo',4)?>" alt="Лого">
+	<a href="/"><img class="header__logo" src="<?=get_field('logo',4)?>" alt="Лого"></a>
 	<p class="header__header-summary"><?=get_field('description',4) ?></p>
 	<div class="nav-and-phonenumbers">
 		<!--(начало) навменю -->
