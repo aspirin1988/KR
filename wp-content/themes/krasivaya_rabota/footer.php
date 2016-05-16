@@ -50,10 +50,10 @@
 					<li><a href="#">Удаление татуировки</a></li>
 					<li><a href="#">Подтяжка нитями</a></li>
 				</ul>
-			</div>
+			</div>-->
 
 			<div class="col-lg-2 col-md-4 col-sm-6">
-			</div>-->
+			</div>
 			<div class="col-lg-2 col-md-4 col-sm-6 address">
 				<h3>Адрес:</h3>
 				<p><a href="#"><?=get_field('address',4) ?></a></p>

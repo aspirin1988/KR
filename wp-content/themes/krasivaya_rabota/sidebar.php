@@ -2,10 +2,13 @@
 $current_cats = get_the_category();
 $current_cats=$current_cats[0];
 $current_post = get_post();
+//print_r($current_cats);
+echo '<br>';
+//print_r($current_post);
 $args = array( 'cat'=> $current_cats->term_id ,'numberposts'=>20 , 'order'=>'ASC' );
 
 $posts=get_posts($args);/* print_r($posts);*/
-if(!get_the_content()){$post=$posts[0];}
+if(!get_the_content()){$current_post=$posts[0];}
 $categories=get_category_by_slug('service');
 //print_r(get_category_by_slug('service'));
 $args = array(
@@ -37,19 +40,20 @@ $categories = get_categories( $args );
 					<div class="panel panel-default">
 						<div data-toggle="collapse" data-parent="#accordion" href="#collapse<?=$key?>" class="panel-heading">
 							<h4 class="panel-title">
-								<?=$value->name?>
+								<?/*=$current_cats->cat_ID.'=='.$value->cat_ID*/?><?=$value->name?>
 							</h4>
 						</div>
-						<div id="collapse<?=$key?>" class="<?php if($current_cats->term_id==$value->term_id) : ?>panel-collapse collapse in<?php else: ?>panel-collapse collapse<?php endif; ?>">
+						<div id="collapse<?=$key?>" class="<?php if($current_cats->cat_ID==$value->cat_ID) : ?> panel-collapse collapse in <?php else: ?> panel-collapse collapse <?php endif; ?>">
 							<div class="panel-body">
+								<?/*=$value->term_id*/?>
 								<ul>
 									<?php
 									$active=0;
-									if (!get_the_content()){$active=$post->ID;} else {$active=get_the_ID();}
+									if (!get_the_content()){$active=$current_cats->ID;} else {$active=get_the_ID();}
 									$args = array( 'cat'=> $value->term_id ,'numberposts'=>20 , 'order'=>'ASC' );
 									$posts=get_posts($args);/* print_r($posts);*/
 									foreach ($posts as $value1 ){ ?>
-										<li<?php if ($active==$value1->ID) : ?> class="active"<?php endif; ?> ><a href="<?=get_permalink($value1->ID)?>"><?php echo $value1->post_title;?></a></li>
+										<li<?php if ($active==$value1->ID) : ?> class="active"<?php endif; ?> ><a href="<?=get_permalink($value1->ID)?>"><?php echo /*$value1->ID."|".*/$value1->post_title;?></a></li>
 									<?php } ?>
 								</ul>
 							</div>
@@ -62,7 +66,7 @@ $categories = get_categories( $args );
 		<div class="col-sm-8 text-center ">
 			<h3 class="text-right text-uppercase"><?=get_the_title()?></h3>
 			<img src="<?=get_the_post_thumbnail_url() ?>" >
-			<p><?php if(!get_the_content()){echo $post->post_content; $current_post=$post;} else{ echo get_the_content();}?></p>
+			<p><?php echo $current_post->post_content;?></p>
 		</div>
 	</div>
 </div>
@@ -86,7 +90,7 @@ $categories = get_categories( $args );
 <div class="service-request on-services">
 	<div class="container">
 		<form class="row blink-mailer">
-			<h4>Пожалуйста, заполните форму</h4>
+			<h4><?=get_field('form',4)?></h4>
 			<div class="col-sm-6 col">
 				<input type="text" style="display: none;" name="title" value="Запись на приём">
 				<div class="form-group">

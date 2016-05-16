@@ -11,10 +11,11 @@
 	<div class="row">
 		<?php $main=explode(',',get_field('main-service',4)); foreach ($main as $value) : $post=get_post($value) ?>
 		<div class="col-sm-6 col-md-3">
+			<a href="<?=get_permalink($post->ID)?>">
 			<img src="<?=get_the_post_thumbnail_url($post->ID)?>" alt="<?=$post->post_title?>">
 			<h4><?=$post->post_title?></h4>
-			<p><?=mb_substr($post->post_title,0,128)?> </p>
-			<a href="<?=get_permalink($post->ID)?>">читать всё</a>
+			<p><?=mb_substr($post->post_content,0,55)?>...</p>
+			</a>
 		</div>
 		<?php endforeach; ?>
 	</div>
@@ -36,8 +37,10 @@ $categories=get_posts($args);
 			<figure></figure>
 		</div>
 
+			<?php $col=0; foreach ($categories as $value): if ($col==0 || $col==2){ ?>
+
 		<div class="row">
-			<?php foreach ($categories as $value): ?>
+			<?php } ?>
 			<div class="col-md-6 anti-age-cosmetology__section">
 				<div class="row">
 					<div class="col-sm-7">
@@ -49,8 +52,10 @@ $categories=get_posts($args);
 					</div>
 				</div>
 			</div>
+			<?php	if ($col==1 || $col==3){ ?>
+				</div>
+		<?php } $col++; ?>
 			<?php endforeach; ?>
-		</div>
 	</div>
 </div>
 <!-- конец АНТИВОЗРАСТНАЯ КОСМЕТОЛОГИЯ-->
@@ -61,7 +66,7 @@ $categories=get_posts($args);
 	<img class="img-responsive" src="<?=get_the_post_thumbnail_url(15)?>" alt="Доктор">
 	<div class="text-block clearfix">
 		<p><?php $post=get_post(15); echo mb_substr($post->post_content,0,512).'...'?></p>
-		<a href="<?=get_permalink(15)?>">Читать далее</a>
+		Читать далее</a>
 	</div>
 </div>
 <!--конец НЕМНОГО О КРАСИВОЙ РАБОТЕ-->
