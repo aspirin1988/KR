@@ -149,7 +149,8 @@ h3 {
       font-weight: normal;
     }
 
-    input:not([type=submit]) {
+    input:not([type=submit]),
+    select {
       font-size: 20px;
       line-height: 20px;
 
