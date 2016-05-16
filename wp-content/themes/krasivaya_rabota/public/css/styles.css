@@ -101,7 +101,7 @@ a {
       padding: 7px 15px;
       height: auto;
       color: #004902; }
-    .service-request form .selection {
+    .service-request form .form-group .selection {
       border: 1px solid #004902;
       border-radius: 4px; }
     .service-request form ::-webkit-input-placeholder {
