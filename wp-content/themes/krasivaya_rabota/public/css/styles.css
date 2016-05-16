@@ -104,6 +104,7 @@ a {
     .service-request form select {
       font-size: 20px;
       line-height: 20px;
+      height: 42px;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
