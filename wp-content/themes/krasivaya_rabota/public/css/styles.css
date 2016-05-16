@@ -101,7 +101,7 @@ a {
       padding: 7px 15px;
       height: auto;
       color: #004902; }
-    .service-request form #serviceType {
+    .service-request form select {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
