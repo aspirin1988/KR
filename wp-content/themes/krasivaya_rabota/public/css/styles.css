@@ -94,14 +94,17 @@ a {
     .service-request form label {
       font-size: 14px;
       font-weight: normal; }
-    .service-request form input:not([type=submit]),
-    .service-request form select {
+    .service-request form input:not([type=submit]) {
       font-size: 20px;
       line-height: 20px;
       border: 1px solid #004902;
       padding: 7px 15px;
       height: auto;
       color: #004902; }
+    .service-request form .select {
+      font-size: 20px;
+      line-height: 20px;
+      border: 1px solid #004902; }
     .service-request form ::-webkit-input-placeholder {
       color: #004902;
       opacity: .8; }
