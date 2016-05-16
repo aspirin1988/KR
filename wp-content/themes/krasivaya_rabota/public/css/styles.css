@@ -496,7 +496,7 @@ header {
   width: 100%; }
   @media (min-width: 768px) {
     .before-after img {
-      max-height: 200px; } }
+      max-height: 400px; } }
 
 /* конец ФОТО ДО И ПОСЛЕ */
 /* начало МОДАЛКА ФОТО ДО И ПОСЛЕ */
