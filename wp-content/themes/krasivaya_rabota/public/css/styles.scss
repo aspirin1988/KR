@@ -161,6 +161,9 @@ h3 {
     }
 
     #serviceType {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       border: 1px solid $company-color !important;
       border-radius: 4px;
     }

@@ -102,6 +102,9 @@ a {
       height: auto;
       color: #004902; }
     .service-request form #serviceType {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       border: 1px solid #004902 !important;
       border-radius: 4px; }
     .service-request form ::-webkit-input-placeholder {
