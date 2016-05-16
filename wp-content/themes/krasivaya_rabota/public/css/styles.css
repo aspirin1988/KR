@@ -105,6 +105,7 @@ a {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
+      padding: 7px 15px;
       border: 1px solid #004902 !important;
       border-radius: 4px; }
     .service-request form ::-webkit-input-placeholder {
