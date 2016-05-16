@@ -109,7 +109,7 @@ $categories = get_categories( $args );
 			<div class="col-sm-6 col">
 				<div class="form-group">
 					<label for="serviceType">Укажите процедуру на которую хотите записаться</label>
-					<div class="select">
+					<div class="selection">
 						<select name="Процедура" type="text" class="form-control" id="serviceType"
 					                             placeholder="название процедуры">
 							<?php $args = array('category_name' => 'service', 'numberposts' => 20, 'order' => 'ASC');

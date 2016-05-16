@@ -96,7 +96,7 @@
 					<div class="col-sm-6 col">
 						<div class="form-group">
 							<label for="serviceType">Укажите процедуру на которую хотите записаться</label>
-							<div class="select">
+							<div class="selection">
 								<select name="Процедура" type="text" class="form-control"
 							                             id="serviceType"
 							                             placeholder="название процедуры">
