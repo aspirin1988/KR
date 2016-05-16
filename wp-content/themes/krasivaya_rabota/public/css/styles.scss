@@ -261,6 +261,7 @@ header {
     &:hover {
       color: $company-color;
       font-weight: bold;
+      background-color: transparent;
     }
   }
   .navbar-nav>li.current>a { //current активная страница

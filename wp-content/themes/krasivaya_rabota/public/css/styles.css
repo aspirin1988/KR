@@ -181,7 +181,8 @@ header {
         padding-bottom: 10px; } }
     .navbar .navbar-nav > li > a:hover {
       color: #004902;
-      font-weight: bold; }
+      font-weight: bold;
+      background-color: transparent; }
   .navbar .navbar-nav > li.current > a {
     color: #004902;
     font-weight: bold; }
