@@ -104,7 +104,8 @@ a {
     .service-request form .select {
       font-size: 20px;
       line-height: 20px;
-      border: 1px solid #004902; }
+      border: 1px solid #004902;
+      border-radius: 4px; }
     .service-request form ::-webkit-input-placeholder {
       color: #004902;
       opacity: .8; }
