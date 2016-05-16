@@ -160,8 +160,8 @@ h3 {
       color: $company-color;
     }
 
-    .form-group .selection {
-      border: 1px solid $company-color;
+    #serviceType {
+      border: 1px solid $company-color !important;
       border-radius: 4px;
     }
 
