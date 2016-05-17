@@ -76,21 +76,24 @@
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4>Запись на прием в центр эстетической медицины <br>
 					«Красивая работа»</h4>
+				<div class="response-mail" >
+					<h2> Ответ </h2>
+				</div>
 				<form class="row blink-mailer">
 					<h4>Пожалуйста, заполните форму</h4>
 					<div class="col-sm-6 col">
-						<input type="text" style="display: none;" name="title" value="Запись на приём">
+						<input type="text" style="display: none;" required name="title" value="Запись на приём">
 						<div class="form-group">
 							<label for="fullName">Представьтесь</label>
-							<input name="Имя" type="text" class="form-control" id="fullName" placeholder="имя">
+							<input name="Имя" required type="text" class="form-control" id="fullName" placeholder="имя">
 						</div>
 						<div class="form-group">
 							<label for="phoneNumber">Номер телефона, по котому с Вами можно связаться</label>
-							<input name="Телефон" type="tel" class="form-control" id="phoneNumber" placeholder="телефон">
+							<input name="Телефон" required type="tel" class="form-control" id="phoneNumber" placeholder="телефон">
 						</div>
 						<div class="form-group">
 							<label for="emailAddress">Введите адрес электронной почты</label>
-							<input name="email" type="email" class="form-control" id="emailAddress" placeholder="e-mail">
+							<input name="email" required type="email" class="form-control" id="emailAddress" placeholder="e-mail">
 						</div>
 					</div>
 					<div class="col-sm-6 col">
@@ -107,11 +110,11 @@
 						</div>
 						<div class="form-group">
 							<label for="date">Выберите  желаемую дату посещения</label>
-							<input name="Дата" type="date" class="form-control" id="date" placeholder="дата">
+							<input name="Дата" required type="date" class="form-control" id="date" placeholder="дата">
 						</div>
 						<div class="form-group">
 							<label for="time">Выберите время посещения</label>
-							<input name="Время" type="time" class="form-control" id="time" placeholder="Время">
+							<input name="Время" required type="time" class="form-control" id="time" placeholder="Время">
 						</div>
 					</div>
 					<div class="col-lg-12 col">
@@ -139,7 +142,7 @@
 <script src="https://callback.blink.kz/resources/callback/js/mailer.js"></script>
 <script>
 	var submitSMG = new BMModule();
-	submitSMG.submitForm(function(success) { $('.blink-mailer input[type=submit]').val('Отправить'); }, function(error) {});
+	submitSMG.submitForm(function(success) { $('.blink-mailer input[type=submit]').val('Отправить'); $('.response-mail').show(500); $('.response-mail h2').html(success); $('.blink-mailer').hide(500);  }, function(error) {});
 </script>
 <script>
 	$('.container.before-after a').click(function(){

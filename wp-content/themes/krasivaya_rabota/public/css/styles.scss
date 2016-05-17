@@ -125,6 +125,16 @@ h3 {
   margin-top: 25px;
 }
 
+div.response-mail{
+  display: none;
+  min-height: 200px;
+  h2{
+    padding: 10px;
+    text-align: center;
+    color: #004902;
+  }
+}
+
 .service-request {
   color: $company-color;
 

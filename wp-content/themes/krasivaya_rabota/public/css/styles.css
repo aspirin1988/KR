@@ -79,6 +79,14 @@ a {
   margin-bottom: 20px;
   margin-top: 25px; }
 
+div.response-mail {
+  display: none;
+  min-height: 200px; }
+  div.response-mail h2 {
+    padding: 10px;
+    text-align: center;
+    color: #004902; }
+
 .service-request {
   color: #004902; }
   .service-request form {
