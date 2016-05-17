@@ -26,7 +26,7 @@
 	<p class="header__header-summary"><?=get_field('description',4) ?></p>
 	<div class="nav-and-phonenumbers">
 		<!--(начало) навменю -->
-		<div class="navbar navbar-default" role="navigation">
+		<div class="navbar" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>

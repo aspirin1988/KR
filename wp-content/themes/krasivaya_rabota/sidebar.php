@@ -112,14 +112,18 @@ $categories = get_categories( $args );
 			<div class="col-sm-6 col">
 				<div class="form-group">
 					<label for="serviceType">Укажите процедуру на которую хотите записаться</label>
-					<select name="Процедура" type="text" class="form-control" id="serviceType"
-						   placeholder="название процедуры">
-						<?php  $args = array( 'category_name'=> 'service' ,'numberposts'=>20 , 'order'=>'ASC' );
-						$categories=get_posts($args);
-						foreach($categories as $value): ?>
-							<option <?php if ($current_post->ID==$value->ID){ echo 'selected="selected"';}?> value="<?=$value->post_title?>" ><?=$value->post_title?></option>
-						<?php endforeach; ?>
-					</select>
+					<div class="selection">
+						<select name="Процедура" type="text" class="form-control" id="serviceType"
+					                             placeholder="название процедуры">
+							<?php $args = array('category_name' => 'service', 'numberposts' => 20, 'order' => 'ASC');
+							$categories = get_posts($args);
+							foreach ($categories as $value): ?>
+								<option <?php if ($current_post->ID == $value->ID) {
+									echo 'selected="selected"';
+								} ?> value="<?= $value->post_title ?>"><?= $value->post_title ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
 				</div>
 				<div class="form-group">
 					<label for="date">Выберите желаемую дату посещения</label>

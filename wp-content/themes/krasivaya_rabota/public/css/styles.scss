@@ -170,6 +170,20 @@ div.response-mail{
       color: $company-color;
     }
 
+    select {
+      font-size: 18px;
+      line-height: 18px;
+      height: 42px;
+
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      padding: 7px 15px;
+      border: 1px solid $company-color !important;
+      border-radius: 4px;
+    }
+
 
     @include placeholder {
       color: $company-color;
@@ -257,6 +271,7 @@ header {
     &:hover {
       color: $company-color;
       font-weight: bold;
+      background-color: transparent;
     }
   }
   .navbar-nav>li.current>a { //current активная страница
@@ -721,7 +736,7 @@ header {
     border: solid 3px $company-color;
     width: 100%;
     @media (min-width: 768px) {
-      max-height: 200px;
+      max-height: 450px;
     }
   }
 }
