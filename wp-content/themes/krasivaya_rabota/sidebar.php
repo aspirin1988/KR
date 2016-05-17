@@ -65,7 +65,7 @@ $categories = get_categories( $args );
 		</div>
 		<div class="col-sm-8 text-center ">
 			<h3 class="text-right text-uppercase"><?=get_the_title()?></h3>
-			<img src="<?=get_the_post_thumbnail_url() ?>" >
+			<img src="<?php if(!get_field('thumbnaill')){ echo get_the_post_thumbnail_url();}else{echo get_field('thumbnaill');} ?>" >
 			<p><?php echo $current_post->post_content;?></p>
 		</div>
 	</div>
@@ -127,11 +127,11 @@ $categories = get_categories( $args );
 				</div>
 				<div class="form-group">
 					<label for="date">Выберите желаемую дату посещения</label>
-					<input name="Дата" required type="date" class="form-control" id="date" placeholder="дата">
+					<input name="Дата"  type="date" class="form-control" id="date" placeholder="дата">
 				</div>
 				<div class="form-group">
 					<label for="time">Выберите время посещения</label>
-					<input name="Время" required type="time" class="form-control" id="time" placeholder="Время">
+					<input name="Время"  type="time" class="form-control" id="time" placeholder="Время">
 				</div>
 			</div>
 			<div class="col-lg-12 col">

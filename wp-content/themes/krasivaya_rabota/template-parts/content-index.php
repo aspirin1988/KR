@@ -14,7 +14,7 @@
 			<a href="<?=get_permalink($post->ID)?>">
 			<img src="<?=get_the_post_thumbnail_url($post->ID)?>" alt="<?=$post->post_title?>">
 			<h4><?=$post->post_title?></h4>
-			<p><?=mb_substr($post->post_content,0,55)?>...</p>
+			<p style="text-align: center;" ><?=mb_substr( strip_tags($post->post_content),0,100)?>...</p>
 			</a>
 		</div>
 		<?php endforeach; ?>

@@ -115,11 +115,11 @@
 						</div>
 						<div class="form-group">
 							<label for="date">Выберите  желаемую дату посещения</label>
-							<input name="Дата" required type="date" class="form-control" id="date" placeholder="дата">
+							<input name="Дата"  type="date" class="form-control" id="date" placeholder="дата">
 						</div>
 						<div class="form-group">
 							<label for="time">Выберите время посещения</label>
-							<input name="Время" required type="time" class="form-control" id="time" placeholder="Время">
+							<input name="Время" type="time" class="form-control" id="time" placeholder="Время">
 						</div>
 					</div>
 					<div class="col-lg-12 col">
