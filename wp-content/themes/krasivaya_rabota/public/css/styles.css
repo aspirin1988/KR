@@ -309,7 +309,8 @@ header {
 /* конец ВИДЫ УСЛУГ*/
 /* начало АНТИВОЗРАСТНАЯ КОСМЕТОЛОГИЯ */
 .anti-age-cosmetology {
-  background-image: url(../img/index/anti-age-cosm-background.jpg); }
+  background-image: url(../img/index/anti-age-cosm-background.jpg);
+  background-size: 33px; }
   .anti-age-cosmetology .anti-age-cosmetology__heading {
     display: flex;
     flex-flow: row nowrap;
