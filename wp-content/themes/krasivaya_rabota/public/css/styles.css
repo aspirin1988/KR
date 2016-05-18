@@ -37,7 +37,8 @@ a {
   border: none;
   background-color: #004902;
   padding: 10px 15px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  line-height: 14px; }
   .btn-company-style:hover, .btn-company-style:focus {
     background-color: #007c03; }
 
