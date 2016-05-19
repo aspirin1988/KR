@@ -8,10 +8,18 @@
 	/*print_r($categories);*/?>
 	<footer class="container">
 		<div class="row">
-			<h3>Услуги:</h3>
+			<h3 class="hidden-xs">Услуги:</h3>
+			<form action="">
+				<input name="search" type="text" id="searchQuery"
+				       placeholder="Поиск по сайту" class="form-control">
+				<button type="submit" class="btn-company-style"><span class="glyphicon glyphicon-search"></span>
+				</button>
+			</form>
+		</div>
+		<div class="row">
 			<?php $col=0; foreach($categories as $key => $value): ?>
 			<?php if (!$col) : ?>
-			<div class="col-lg-2 col-md-4 col-sm-6">
+			<div class="col-lg-2 col-md-4 col-sm-6 hidden-xs">
 				<ul>
 					<?php endif; ?>
 							<li><a href="<?=get_permalink($value->ID)?>"><?=$value->post_title?></a></li>
@@ -58,12 +66,9 @@
 				<?php endif;
 				?>
 			</div>
-			<div class="col-lg-2 col-md-4 col-sm-6 address-and-search">
+			<div class="col-lg-2 col-md-4 col-sm-6 address">
 				<h3>Адрес:</h3>
 				<p><a href="#"><?=get_field('address',4) ?></a></p>
-
-				<input name="search" type="text" class="form-control" id="searchQuery" placeholder="Поиск по сайту">
-				<input type="submit" value="Искать" class="btn-company-style">
 			</div>
 		</div>
 	</footer>
@@ -142,12 +147,18 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/moment.js"></script>
+<!-- ru.js локаль к moment.js-->
+<script src="<?php bloginfo('template_directory') ?>/public/js/ru.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?php bloginfo('template_directory') ?>/public/js/bootstrap.min.js"></script>
 <!-- SmartMenus jQuery plugin -->
 <script type="text/javascript" src="<?php bloginfo('template_directory') ?>/public/js/jquery.smartmenus.js"></script>
 <!-- SmartMenus jQuery Bootstrap Addon -->
 <script type="text/javascript" src="<?php bloginfo('template_directory') ?>/public/js/jquery.smartmenus.bootstrap.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory') ?>/public/js/imagelightbox.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory') ?>/public/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory') ?>/public/js/scripts.js"></script>
 <script src="https://callback.blink.kz/resources/callback/js/mailer.js"></script>
 <script>
 	var submitSMG = new BMModule();

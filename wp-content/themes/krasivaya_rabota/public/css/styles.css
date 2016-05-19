@@ -31,6 +31,9 @@ a {
     color: inherit;
     text-decoration: none; }
 
+button {
+  border: none; }
+
 .btn-company-style {
   font-size: 14px;
   color: white;
@@ -103,13 +106,18 @@ div.response-mail {
     .service-request form label {
       font-size: 14px;
       font-weight: normal; }
-    .service-request form input:not([type=submit]) {
+    .service-request form input:not([type=submit]),
+    .service-request form input.form-control {
       font-size: 20px;
       line-height: 20px;
+      border-radius: 4px;
       border: 1px solid #004902;
       padding: 7px 15px;
       height: auto;
       color: #004902; }
+    .service-request form .input-group .form-control:last-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px; }
     .service-request form select {
       font-size: 18px;
       line-height: 18px;
@@ -238,24 +246,64 @@ header {
   line-height: 2.1;
   text-transform: uppercase;
   font-size: 14px;
-  padding: 65px 0 35px; }
+  padding: 25px 0 35px; }
   @media (max-width: 768px) {
     .footer-wrapper {
-      padding: 35px 0 15px;
+      padding: 25px 0 15px;
       text-align: center; } }
-  .footer-wrapper h3 {
+  @media (min-width: 768px) {
+    .footer-wrapper .row:first-child {
+      margin-bottom: 15px; } }
+  .footer-wrapper h3:first-child {
+    margin-top: 15px;
+    float: left; }
+    @media (max-width: 768px) {
+      .footer-wrapper h3:first-child {
+        margin: 15px auto;
+        float: none;
+        display: block;
+        width: auto; } }
+  .footer-wrapper form {
+    max-width: 500px;
+    float: right;
     margin-top: 15px; }
-    @media (min-width: 1200px) {
-      .footer-wrapper h3 {
-        margin-top: -35px; } }
-  .footer-wrapper .address-and-search p {
+    @media (max-width: 768px) {
+      .footer-wrapper form {
+        margin: 15px auto;
+        float: none;
+        display: block;
+        width: auto; } }
+    .footer-wrapper form input {
+      display: inline-block;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border: none;
+      height: 30px;
+      width: 335px; }
+      @media (max-width: 1200px) {
+        .footer-wrapper form input {
+          width: 270px; } }
+      @media (max-width: 992px) {
+        .footer-wrapper form input {
+          width: 320px; } }
+      @media (max-width: 768px) {
+        .footer-wrapper form input {
+          width: auto; } }
+    .footer-wrapper form button {
+      padding: 5px 15px 5px 10px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      display: inline-block;
+      margin-left: -3px;
+      height: 30px; }
+  .footer-wrapper .address h3 {
+    float: none; }
+  .footer-wrapper .address p {
     line-height: 1.5;
     text-transform: none; }
   @media (min-width: 1200px) {
-    .footer-wrapper .address-and-search {
+    .footer-wrapper .address {
       text-align: right; } }
-  .footer-wrapper .address-and-search button {
-    padding: 5px 15px; }
 
 /*(конец) FOOTER*/
 /* -------------------------
@@ -523,18 +571,266 @@ header {
 
 /* конец ФОТО ДО И ПОСЛЕ */
 /* начало МОДАЛКА ФОТО ДО И ПОСЛЕ */
-.before-and-after-modal {
-  background-color: #c1de97; }
-  .before-and-after-modal img {
-    width: 100%;
-    margin-top: 30px; }
+/* НАЧАЛО LIGHTBOX */
+#imagelightbox {
+  position: fixed;
+  z-index: 9999;
+  -ms-touch-action: none;
+  touch-action: none; }
 
+/* activity indication */
+#imagelightbox-loading,
+#imagelightbox-loading div {
+  border-radius: 50%; }
+
+#imagelightbox-loading {
+  width: 2.5em;
+  /* 40 */
+  height: 2.5em;
+  /* 40 */
+  background-color: #444;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 10003;
+  top: 50%;
+  left: 50%;
+  padding: 0.625em;
+  /* 10 */
+  margin: -1.25em 0 0 -1.25em;
+  /* 20 */
+  -webkit-box-shadow: 0 0 2.5em rgba(0, 0, 0, 0.75);
+  /* 40 */
+  box-shadow: 0 0 2.5em rgba(0, 0, 0, 0.75);
+  /* 40 */ }
+
+#imagelightbox-loading div {
+  width: 1.25em;
+  /* 20 */
+  height: 1.25em;
+  /* 20 */
+  background-color: #fff;
+  -webkit-animation: imagelightbox-loading .5s ease infinite;
+  animation: imagelightbox-loading .5s ease infinite; }
+
+@-webkit-keyframes imagelightbox-loading {
+  from {
+    opacity: .5;
+    -webkit-transform: scale(0.75); }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1); }
+  to {
+    opacity: .5;
+    -webkit-transform: scale(0.75); } }
+@keyframes imagelightbox-loading {
+  from {
+    opacity: .5;
+    transform: scale(0.75); }
+  50% {
+    opacity: 1;
+    transform: scale(1); }
+  to {
+    opacity: .5;
+    transform: scale(0.75); } }
+/* overlay */
+#imagelightbox-overlay {
+  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+/* "close" button */
+#imagelightbox-close {
+  width: 2.5em;
+  /* 40 */
+  height: 2.5em;
+  /* 40 */
+  text-align: left;
+  background-color: #666;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 10002;
+  top: 2.5em;
+  /* 40 */
+  right: 2.5em;
+  /* 40 */
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease; }
+
+#imagelightbox-close:hover,
+#imagelightbox-close:focus {
+  background-color: #111; }
+
+#imagelightbox-close:before,
+#imagelightbox-close:after {
+  width: 2px;
+  background-color: #fff;
+  content: '';
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 50%;
+  margin-left: -1px; }
+
+#imagelightbox-close:before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+#imagelightbox-close:after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+/* navigation */
+#imagelightbox-nav {
+  background-color: #444;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  position: fixed;
+  z-index: 10001;
+  left: 50%;
+  bottom: 3.75em;
+  /* 60 */
+  padding: 0.313em;
+  /* 5 */
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
+
+#imagelightbox-nav button {
+  width: 1em;
+  /* 20 */
+  height: 1em;
+  /* 20 */
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 0.313em;
+  /* 5 */ }
+
+#imagelightbox-nav button.active {
+  background-color: #fff; }
+
+/* arrows */
+.imagelightbox-arrow {
+  width: 3.75em;
+  /* 60 */
+  height: 7.5em;
+  /* 120 */
+  background-color: #444;
+  background-color: rgba(0, 0, 0, 0.5);
+  vertical-align: middle;
+  display: none;
+  position: fixed;
+  z-index: 10001;
+  top: 50%;
+  margin-top: -3.75em;
+  /* 60 */ }
+
+.imagelightbox-arrow:hover,
+.imagelightbox-arrow:focus {
+  background-color: #666;
+  background-color: rgba(0, 0, 0, 0.75); }
+
+.imagelightbox-arrow:active {
+  background-color: #111; }
+
+.imagelightbox-arrow-left {
+  left: 2.5em;
+  /* 40 */ }
+
+.imagelightbox-arrow-right {
+  right: 2.5em;
+  /* 40 */ }
+
+.imagelightbox-arrow:before {
+  width: 0;
+  height: 0;
+  border: 1em solid transparent;
+  content: '';
+  display: inline-block;
+  margin-bottom: -0.125em;
+  /* 2 */ }
+
+.imagelightbox-arrow-left:before {
+  border-left: none;
+  border-right-color: #fff;
+  margin-left: -0.313em;
+  /* 5 */ }
+
+.imagelightbox-arrow-right:before {
+  border-right: none;
+  border-left-color: #fff;
+  margin-right: -0.313em;
+  /* 5 */ }
+
+#imagelightbox-loading,
+#imagelightbox-overlay,
+#imagelightbox-close,
+#imagelightbox-caption,
+#imagelightbox-nav,
+.imagelightbox-arrow {
+  -webkit-animation: fade-in .25s linear;
+  animation: fade-in .25s linear; }
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@media only screen and (max-width: 41.25em) {
+  #container {
+    width: 100%; }
+
+  #imagelightbox-close {
+    top: 1.25em;
+    /* 20 */
+    right: 1.25em;
+    /* 20 */ }
+
+  #imagelightbox-nav {
+    bottom: 1.25em;
+    /* 20 */ }
+
+  .imagelightbox-arrow {
+    width: 2.5em;
+    /* 40 */
+    height: 3.75em;
+    /* 60 */
+    margin-top: -2.75em;
+    /* 30 */ }
+
+  .imagelightbox-arrow-left {
+    left: 1.25em;
+    /* 20 */ }
+
+  .imagelightbox-arrow-right {
+    right: 1.25em;
+    /* 20 */ } }
+@media only screen and (max-width: 20em) {
+  .imagelightbox-arrow-left {
+    left: 0; }
+
+  .imagelightbox-arrow-right {
+    right: 0; } }
+/* конец lightbox */
 /* конец МОДАЛКА ФОТО ДО И ПОСЛЕ */
 /* начало ЗАКАЗАТЬ УСЛУГУ у этого раздела общие стили с одноимённой модалкой */
 .service-request.on-services {
   background-color: #c1de97; }
 
-/* конец МОДАЛКА ФОТО ДО И ПОСЛЕ */
+/* конец ЗАКАЗАТЬ УСЛУГУ у этого раздела общие стили с одноимённой модалкой */
 /* -------------------------
   (конец) УСЛУГИ страница
 -------------------------  */

@@ -78,7 +78,7 @@ $categories = get_categories( $args );
 	<div class="row text-center">
 		<?php foreach(pp_gallery_get(get_the_ID()) as $value):/* print_r($value);*/ ?>
 		<div class="col-sm-6 col-md-3 item">
-			<a href="#" data-toggle="modal" data-target="#beforeAndAfterGallery"><img src="<?=$value->url?>" class="img-responsive"></a>
+			<a href="<?=$value->url?>" data-imagelightbox="f"><img src="<?=$value->url?>" class="img-responsive"></a>
 		</div>
 		<?php endforeach; ?>
 
@@ -113,8 +113,7 @@ $categories = get_categories( $args );
 				<div class="form-group">
 					<label for="serviceType">Укажите процедуру на которую хотите записаться</label>
 					<div class="selection">
-						<select name="Процедура" type="text" class="form-control" id="serviceType"
-					                             placeholder="название процедуры">
+						<select name="Процедура" type="text" class="form-control" id="serviceType">
 							<?php $args = array('category_name' => 'service', 'numberposts' => 20, 'order' => 'ASC');
 							$categories = get_posts($args);
 							foreach ($categories as $value): ?>
@@ -125,13 +124,9 @@ $categories = get_categories( $args );
 						</select>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="date">Выберите желаемую дату посещения</label>
-					<input name="Дата"  type="date" class="form-control" id="date" placeholder="дата">
-				</div>
-				<div class="form-group">
-					<label for="time">Выберите время посещения</label>
-					<input name="Время"  type="time" class="form-control" id="time" placeholder="Время">
+				<div class="form-group input-group date">
+					<label for="datetimepicker">Желаемые дата и время посещения</label>
+					<input type="text" id="datetimepicker" class="form-control" placeholder="дата и время посещения">
 				</div>
 			</div>
 			<div class="col-lg-12 col">
@@ -143,19 +138,3 @@ $categories = get_categories( $args );
 	</div>
 </div>
 <!-- конец ЗАКАЗАТЬ УСЛУГУ -->
-
-<!-- начало MODAL WINDOW BEFORE-AND-AFTER-GALLERY -->
-<div id="beforeAndAfterGallery" class="modal fade" role="dialog">
-	<div class="modal-dialog">
-
-		<!-- Modal content-->
-		<div class="modal-content before-and-after-modal">
-			<div class="modal-body">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<img src="" class="img-responsive img-rounded">
-			</div>
-		</div>
-
-	</div>
-</div>
-<!-- конец MODAL WINDOW BEFORE-AND-AFTER-GALLERY -->
