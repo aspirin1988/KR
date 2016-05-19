@@ -61,7 +61,7 @@
 			</div>-->
 
 			<div class="col-lg-2 col-md-4 col-sm-6">
-				<?php if (!is_category()) :?>
+				<?php  if (is_page()) :?>
 					<button class="btn-company-style" data-toggle="modal" data-target="#serviceRequest">записаться на приём</button>
 				<?php endif;
 				?>

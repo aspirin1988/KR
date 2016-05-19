@@ -2,10 +2,15 @@
 $current_cats = get_the_category();
 $current_cats=$current_cats[0];
 $current_post = get_post();
+$current_object=get_queried_object();
+if ($current_object->slug=='service'){
+	$current_cats='';
+}
+print_r($current_object);
 //print_r($current_cats);
 echo '<br>';
 //print_r($current_post);
-$args = array( 'cat'=> $current_cats->term_id ,'numberposts'=>20 , 'order'=>'ASC' );
+$args = array( 'cat'=> 'category_name' ,'numberposts'=>20 , 'order'=>'ASC' );
 
 $posts=get_posts($args);/* print_r($posts);*/
 if(!get_the_content()){$current_post=$posts[0];}
