@@ -545,6 +545,8 @@ header {
   @media (min-width: 768px) {
     .accordion-and-text h3 {
       margin-top: 0; } }
+  .accordion-and-text img {
+    margin: 0 auto; }
   .accordion-and-text p {
     text-align: justify;
     line-height: 1.4; }
