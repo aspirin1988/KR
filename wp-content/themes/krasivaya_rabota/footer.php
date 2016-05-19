@@ -58,7 +58,7 @@
 				<?php endif;
 				?>
 			</div>
-			<div class="col-lg-2 col-md-4 col-sm-6 address">
+			<div class="col-lg-2 col-md-4 col-sm-6 address-and-search">
 				<h3>Адрес:</h3>
 				<p><a href="#"><?=get_field('address',4) ?></a></p>
 
