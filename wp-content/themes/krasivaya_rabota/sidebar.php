@@ -6,7 +6,7 @@ $current_object=get_queried_object();
 if ($current_object->slug=='service'){
 	$current_cats='';
 }
-print_r($current_object);
+//print_r($current_object);
 //print_r($current_cats);
 echo '<br>';
 //print_r($current_post);
@@ -78,10 +78,11 @@ $categories = get_categories( $args );
 <!--конец АККОРДЕОН И ТЕКСТ-->
 
 <!--начало ФОТО ДО И ПОСЛЕ-->
+<?php $gall=pp_gallery_get(get_the_ID()); if ($gall):?>
 <div class="container before-after">
 	<h3 class="text-right text-uppercase">Фото до и после</h3>
 	<div class="row text-center">
-		<?php foreach(pp_gallery_get(get_the_ID()) as $value):/* print_r($value);*/ ?>
+		<?php foreach($gall as $value):/* print_r($value);*/ ?>
 		<div class="col-sm-6 col-md-3 item">
 			<a href="<?=$value->url?>" data-imagelightbox="f"><img src="<?=$value->url?>" class="img-responsive"></a>
 		</div>
@@ -89,6 +90,7 @@ $categories = get_categories( $args );
 
 	</div>
 </div>
+<?php endif; ?>
 <!--конец ФОТО ДО И ПОСЛЕ-->
 
 <!-- начало ЗАКАЗАТЬ УСЛУГУ -->
