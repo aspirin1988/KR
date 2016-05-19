@@ -171,3 +171,4 @@ add_filter('single_template', create_function(
       return $the_template;'
 	)
 );
+
