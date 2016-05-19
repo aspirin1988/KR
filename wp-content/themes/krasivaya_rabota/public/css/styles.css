@@ -239,6 +239,12 @@ header {
     font-size: 18px; }
     .navbar .dropdown-menu > li > a:focus, .navbar .dropdown-menu > li > a:hover {
       background-color: #a8df93; }
+  .navbar .navbar-collapse {
+    border-top: 1px solid #ddd; }
+  .navbar .navbar-toggle {
+    border-color: #ddd; }
+    .navbar .navbar-toggle .icon-bar {
+      background-color: #888; }
 
 /*(начало)номера телефонов */
 .tel-numbers {
@@ -582,7 +588,7 @@ header {
         background-color: #4fdc52;
         color: white; }
   .panel-group .panel-heading + .panel-collapse > .panel-body ul li.active {
-    background: rgba(0, 0, 255, 0.3); }
+    background: rgba(0, 255, 0, 0.3); }
 
 /* конец АККОРДЕОН И ТЕКСТ */
 /* начало ФОТО ДО И ПОСЛЕ */

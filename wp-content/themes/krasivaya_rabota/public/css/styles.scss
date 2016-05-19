@@ -346,6 +346,18 @@ header {
       background-color: $highlighted-color;
     }
   }
+
+  .navbar-collapse {
+    border-top: 1px solid #ddd;
+  }
+
+  .navbar-toggle {
+    border-color: #ddd;
+
+    .icon-bar {
+      background-color: #888;
+    }
+  }
 } //(конец) НАВБАР и его внутренности
 
 /*(начало)номера телефонов */
@@ -829,7 +841,7 @@ header {
   }
 
   ul li.active{
-    background: rgba(0,0,255,.3);
+    background: rgba(0,255,0,.3);
   }
 
 }
