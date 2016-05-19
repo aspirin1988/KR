@@ -86,7 +86,7 @@
 				<h4>Запись на прием в центр эстетической медицины <br>
 					«Красивая работа»</h4>
 				<div class="response-mail" >
-					<h2> Ответ </h2>
+					<h2>  </h2>
 				</div>
 				<form class="row blink-mailer">
 					<h4>Пожалуйста, заполните форму</h4>
@@ -170,5 +170,9 @@
 		$('#beforeAndAfterGallery img').attr('src',src);
 	});
 </script>
+
+<?=get_field('google');?>
+<?=get_field('yandex');?>
+
 </body>
 </html>
