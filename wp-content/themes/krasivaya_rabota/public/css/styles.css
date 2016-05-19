@@ -115,9 +115,9 @@ div.response-mail {
       padding: 7px 15px;
       height: auto;
       color: #004902; }
-    .service-request form .input-group .form-control:last-child {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px; }
+    .service-request form .input-group .form-control:last-child,
+    .service-request form .input-group .form-control:not(:first-child):not(:last-child) {
+      border-radius: 4px; }
     .service-request form select {
       font-size: 18px;
       line-height: 18px;
@@ -140,6 +140,14 @@ div.response-mail {
     .service-request form :-ms-input-placeholder {
       color: #004902;
       opacity: .8; }
+    .service-request form .bootstrap-datetimepicker-widget table td.active {
+      background: #007c03; }
+      .service-request form .bootstrap-datetimepicker-widget table td.active:hover {
+        background: #007c03; }
+    .service-request form .bootstrap-datetimepicker-widget table td.today:before {
+      border-bottom-color: #007c03; }
+    .service-request form .bootstrap-datetimepicker-widget table td.active.today:before {
+      border-bottom-color: #fff; }
     .service-request form input[type=submit] {
       float: right; }
       @media (max-width: 768px) {

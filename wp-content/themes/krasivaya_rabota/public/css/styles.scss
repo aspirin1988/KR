@@ -177,9 +177,9 @@ div.response-mail{
       color: $company-color;
     }
 
-    .input-group .form-control:last-child {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
+    .input-group .form-control:last-child,
+    .input-group .form-control:not(:first-child):not(:last-child) {
+      border-radius: 4px;
     }
 
     select {
@@ -200,6 +200,21 @@ div.response-mail{
     @include placeholder {
       color: $company-color;
       opacity: .8;
+    }
+
+    .bootstrap-datetimepicker-widget table td.active {
+      background: lighten($company-color, 10);
+
+      &:hover {
+        background: lighten($company-color, 10);
+      }
+    }
+
+    .bootstrap-datetimepicker-widget table td.today:before {
+      border-bottom-color: lighten($company-color, 10);
+    }
+    .bootstrap-datetimepicker-widget table td.active.today:before {
+      border-bottom-color: #fff;
     }
 
     input[type=submit] {

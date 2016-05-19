@@ -122,13 +122,9 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="date">Выберите  желаемую дату посещения</label>
-							<input name="Дата"  type="date" class="form-control" id="date" placeholder="дата">
-						</div>
-						<div class="form-group">
-							<label for="time">Выберите время посещения</label>
-							<input name="Время" type="time" class="form-control" id="time" placeholder="Время">
+						<div class="form-group input-group date">
+							<label for="datetimepicker">Желаемые дата и время посещения</label>
+							<input type="text" id="datetimepicker" class="form-control" placeholder="дата и время посещения">
 						</div>
 					</div>
 					<div class="col-lg-12 col">
