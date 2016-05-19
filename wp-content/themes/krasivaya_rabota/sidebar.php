@@ -70,7 +70,7 @@ $categories = get_categories( $args );
 		</div>
 		<div class="col-sm-8 text-center ">
 			<h3 class="text-right text-uppercase"><?=get_the_title()?></h3>
-			<img src="<?php if(!get_field('thumbnaill')){ echo get_the_post_thumbnail_url();}else{echo get_field('thumbnaill');} ?>" >
+			<img class="img-responsive" src="<?php if(!get_field('thumbnaill')){ echo get_the_post_thumbnail_url();}else{echo get_field('thumbnaill');} ?>" >
 			<p><?php echo $current_post->post_content;?></p>
 		</div>
 	</div>
