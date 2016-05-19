@@ -90,7 +90,7 @@ $categories = get_categories( $args );
 <div class="service-request on-services">
 	<div class="container mailer">
 		<div class="response-mail" >
-			<h2> Ответ </h2>
+			<h2>  </h2>
 		</div>
 		<form class="row blink-mailer">
 			<h4><?=get_field('form',4)?></h4>
