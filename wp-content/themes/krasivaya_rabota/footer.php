@@ -13,9 +13,9 @@
 			<?php if (!$col) : ?>
 			<div class="col-lg-2 col-md-4 col-sm-6">
 				<ul>
-			<?php endif; ?>
-					<li><a href="<?=get_permalink($value->ID)?>"><?=$value->post_title?></a></li>
-			<?php $col++;  if ($col==$row||$key==count($categories)-1) : $col=0; ?>
+					<?php endif; ?>
+							<li><a href="<?=get_permalink($value->ID)?>"><?=$value->post_title?></a></li>
+					<?php $col++;  if ($col==$row||$key==count($categories)-1) : $col=0; ?>
 				</ul>
 			</div>
 				<?php endif; ?>
@@ -53,14 +53,18 @@
 			</div>-->
 
 			<div class="col-lg-2 col-md-4 col-sm-6">
-			</div>
-			<div class="col-lg-2 col-md-4 col-sm-6 address">
-				<h3>Адрес:</h3>
-				<p><a href="#"><?=get_field('address',4) ?></a></p>
 				<?php if (!is_category()) :?>
-				<button class="btn-company-style" data-toggle="modal" data-target="#serviceRequest">записаться на приём</button>
+					<button class="btn-company-style" data-toggle="modal" data-target="#serviceRequest">записаться на приём</button>
 				<?php endif;
 				?>
+			</div>
+			<div class="col-lg-2 col-md-4 col-sm-6 address-and-search">
+				<h3>Адрес:</h3>
+				<p><a href="#"><?=get_field('address',4) ?></a></p>
+
+				<input name="search" type="text" class="form-control" id="searchQuery" placeholder="Поиск по сайту">
+				<input type="submit" value="Искать" class="btn-company-style">
+			</div>
 		</div>
 	</footer>
 </div>

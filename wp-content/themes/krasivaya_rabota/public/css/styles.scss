@@ -66,6 +66,7 @@ a {
 
   padding: 10px 15px;
   border-radius: 10px;
+  line-height: 16px;
 
   &:hover,
   &:focus {
@@ -364,12 +365,19 @@ header {
       }
     }
 
-    .address {
-      line-height: 1.5;
-      text-transform: none;
+    .address-and-search {
+
+      p {
+        line-height: 1.5;
+        text-transform: none;
+      }
 
       @media (min-width: 1200px) {
         text-align: right;
+      }
+
+      button {
+        padding: 5px 15px;
       }
     }
   }
@@ -446,6 +454,7 @@ header {
 
 .anti-age-cosmetology {
   background-image: url(../img/index/anti-age-cosm-background.jpg);
+  background-size: 33px;
 
   .anti-age-cosmetology__heading {
     display: flex;
