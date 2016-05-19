@@ -16,7 +16,7 @@
 <!--		--><?php //if ( 'post' === get_post_type() ) : ?>
 <!--		<div class="entry-meta">-->
 <!--			--><?php //krasivaya_rabota_posted_on(); ?>
-<!--		</div><!-- .entry-meta -->-->
+<!--		</div><!-- .entry-meta -->
 <!--		--><?php //endif; ?>
 	</header><!-- .entry-header -->
 
@@ -26,5 +26,5 @@
 
 <!--	<footer class="entry-footer">-->
 <!--		--><?php //krasivaya_rabota_entry_footer(); ?>
-<!--	</footer><!-- .entry-footer -->-->
+<!--	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
