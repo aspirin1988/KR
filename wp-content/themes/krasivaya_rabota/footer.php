@@ -61,6 +61,10 @@
 			<div class="col-lg-2 col-md-4 col-sm-6 address">
 				<h3>Адрес:</h3>
 				<p><a href="#"><?=get_field('address',4) ?></a></p>
+
+				<input name="search" type="text" class="form-control" id="searchQuery" placeholder="Поиск по сайту">
+				<input type="submit" value="Искать" class="btn-company-style">
+			</div>
 		</div>
 	</footer>
 </div>
