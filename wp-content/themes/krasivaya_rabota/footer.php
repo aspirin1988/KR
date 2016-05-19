@@ -9,12 +9,12 @@
 	<footer class="container">
 		<div class="row">
 			<h3 class="hidden-xs">Услуги:</h3>
-			<form action="">
+			<!--<form action="">
 				<input name="search" type="text" id="searchQuery"
 				       placeholder="Поиск по сайту" class="form-control">
 				<button type="submit" class="btn-company-style"><span class="glyphicon glyphicon-search"></span>
 				</button>
-			</form>
+			</form>-->
 			<?php get_search_form(); ?>
 		</div>
 		<div class="row">
