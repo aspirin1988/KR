@@ -226,10 +226,17 @@ function get_search_form( $echo = true ) {
 			$form = '<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '">
 				<label>
 					<span class="screen-reader-text">' . _x( 'Search for:', 'label' ) . '</span>
-					<input type="search" class="search-field" placeholder="' . esc_attr_x( 'Search &hellip;', 'placeholder' ) . '" value="' . get_search_query() . '" name="s" title="' . esc_attr_x( 'Search for:', 'label' ) . '" />
+					<input type="search" id="searchQuery" class="form-control" placeholder="Поиск по сайту" value="' . get_search_query() . '" name="s" title="' . esc_attr_x( 'Search for:', 'label' ) . '" />
 				</label>
-				<input type="submit" class="search-submit" value="'. esc_attr_x( 'Search', 'submit button' ) .'" />
+				<input type="submit" class="btn-company-style" value="'. esc_attr_x( 'Search', 'submit button' ) .'" />
 			</form>';
+
+			$form='<form role="search" method="get action="' . esc_url( home_url( '/' ) ) . '">
+				<input value="' . get_search_query() . '" name="s" type="text" id="searchQuery" placeholder="Поиск по сайту" class="form-control">
+				<button type="submit" class="btn-company-style"><span class="glyphicon glyphicon-search"></span>
+				</button>
+			</form>';
+
 		} else {
 			$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . esc_url( home_url( '/' ) ) . '">
 				<div>
