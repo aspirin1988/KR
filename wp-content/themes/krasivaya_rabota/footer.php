@@ -15,6 +15,7 @@
 				<button type="submit" class="btn-company-style"><span class="glyphicon glyphicon-search"></span>
 				</button>
 			</form>
+			<?php get_search_form(); ?>
 		</div>
 		<div class="row">
 			<?php $col=0; foreach($categories as $key => $value): ?>
