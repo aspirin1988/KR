@@ -72,9 +72,25 @@ button {
     content: ''; } }
 /* (конец) ОБЩИЕ СТИЛИ  */
 /*(начало) запись на приём СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА И РАЗДЕЛА НА СТРАНИЦЕ УСЛУГИ */
+/*КОНЕЦ центрируем вертикально окно модалки */
+.modal {
+  text-align: center; }
+
+@media screen and (min-width: 768px) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%; } }
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle; }
+
 .modal-service-request .modal-content {
   background-color: #c1de97; }
 
+/*КОНЕЦ центрируем вертикально окно модалки */
 .service-request h4 {
   text-align: center;
   text-transform: uppercase;
@@ -529,6 +545,8 @@ header {
   @media (min-width: 768px) {
     .accordion-and-text h3 {
       margin-top: 0; } }
+  .accordion-and-text img {
+    margin: 0 auto; }
   .accordion-and-text p {
     text-align: justify;
     line-height: 1.4; }
