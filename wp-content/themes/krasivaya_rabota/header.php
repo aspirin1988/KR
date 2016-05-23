@@ -41,7 +41,6 @@
 	<![endif]-->
 </head>
 <body>
-
 <!-- начало HEADER -->
 <header class="container">
 	<a href="/"><img class="header__logo" src="<?=get_field('logo',4)?>" alt="Лого"></a>
