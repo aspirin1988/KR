@@ -12,6 +12,12 @@ echo '<br>';
 //print_r($current_post);
 $args = array( 'cat'=> 'category_name' ,'numberposts'=>20 , 'order'=>'ASC' );
 
+if(is_category()&&$current_object->slug=='service'){
+	//global $posts;
+	$temp_post=query_posts(array('category_name'=>'photo_laser_epilation','orderby'=>'id','order'=>'ASC','numberposts'=>1));
+	while ( have_posts() ) : the_post(); break; endwhile;
+}
+
 $posts=get_posts($args);/* print_r($posts);*/
 if(!get_the_content()){$current_post=$posts[0];}
 $categories=get_category_by_slug('service');
@@ -33,6 +39,8 @@ $args = array(
 	// полный список параметров смотрите в описании функции http://wp-kama.ru/function/get_terms
 );
 $categories = get_categories( $args );
+$temp_post='';
+
 //print_r($categories)
 ?>
 <!--начало АККОРДЕОН И ТЕКСТ-->
