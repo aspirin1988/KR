@@ -31,8 +31,6 @@ define('DB_USER', 'krasi_rab');
 define('DB_PASSWORD', 'zWw5f7#6');
 //define('DB_PASSWORD', '123456');
 
-//'xVYlzr0x$cLvj9@X8oP8pmC1'
-
 /** MySQL hostname */
 define('DB_HOST', 'srv-db-plesk01.ps.kz:3306');
 //define('DB_HOST', 'localhost');
