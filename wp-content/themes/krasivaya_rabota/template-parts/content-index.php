@@ -5,7 +5,6 @@
 	</div>
 </div>
 <!--начало ГЛАВНЫЙ БАННЕР-->
-<?php echo ABSPATH; ?>
 <!--начало ВИДЫ УСЛУГ-->
 <div class="container services-on-main">
 	<div class="row">
