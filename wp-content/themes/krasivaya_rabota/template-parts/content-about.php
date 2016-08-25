@@ -9,7 +9,7 @@
 				<img class="img-responsive" src="<?=get_the_post_thumbnail_url()?>" alt="Доктор">
 			</div>
 			<div class="col-sm-8">
-				<p><?=get_the_content()?></p>
+				<p><?php the_content()?></p>
 			</div>
 		</div>
 	</div>

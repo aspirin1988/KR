@@ -641,10 +641,10 @@ header {
     }
   }
 
-  .img {
+  img {
+    display: block;
     border-radius: 5px;
-    height: 350px;
-    background: 50% 10%/cover;
+    margin: 0 auto;
   }
 
   .text-block {

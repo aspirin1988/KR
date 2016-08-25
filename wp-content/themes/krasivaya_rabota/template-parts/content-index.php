@@ -64,7 +64,7 @@ $categories=get_posts($args);
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-5">
-				<div class="img" style="background-image: url('<?= get_the_post_thumbnail_url(15) ?>')"></div>
+				<img src="<?= get_the_post_thumbnail_url(15) ?>">
 			</div>
 			<div class="col-sm-7">
 				<br class="visible-lg">

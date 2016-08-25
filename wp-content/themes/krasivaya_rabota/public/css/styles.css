@@ -441,10 +441,10 @@ header {
         display: block; } }
     .about-on-main h3 a {
       border-bottom: 2px solid black; }
-  .about-on-main .img {
+  .about-on-main img {
+    display: block;
     border-radius: 5px;
-    height: 350px;
-    background: 50% 10%/cover; }
+    margin: 0 auto; }
   .about-on-main .text-block {
     border-radius: 5px;
     background-color: rgba(121, 190, 119, 0.7);
