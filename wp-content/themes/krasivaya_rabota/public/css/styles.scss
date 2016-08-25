@@ -317,19 +317,16 @@ header {
 
     &:hover {
       color: $company-color;
-      font-weight: bold;
       background-color: transparent;
     }
   }
   .navbar-nav>li.current>a { //current активная страница
     color: $company-color;
-    font-weight: bold;
   }
 
   .navbar-nav>li.open>a,
   .navbar-nav>li.open>a:hover {
     background-color: transparent; //фон для верхнего уровня меню
-    font-weight: bold;
     color: $company-color;
   }
 

@@ -222,15 +222,12 @@ header {
         padding-bottom: 10px; } }
     .navbar .navbar-nav > li > a:hover {
       color: #004902;
-      font-weight: bold;
       background-color: transparent; }
   .navbar .navbar-nav > li.current > a {
-    color: #004902;
-    font-weight: bold; }
+    color: #004902; }
   .navbar .navbar-nav > li.open > a,
   .navbar .navbar-nav > li.open > a:hover {
     background-color: transparent;
-    font-weight: bold;
     color: #004902; }
   .navbar .open > a,
   .navbar .open > a:hover {
