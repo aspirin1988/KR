@@ -60,12 +60,24 @@ $categories=get_posts($args);
 <!-- конец АНТИВОЗРАСТНАЯ КОСМЕТОЛОГИЯ-->
 
 <!--начало НЕМНОГО О КРАСИВОЙ РАБОТЕ-->
-<div class="container about-on-main">
-	<h3><a href="<?=get_permalink(15)?>">НЕМНОГО О «КРАСИВОЙ РАБОТЕ»</a></h3>
-	<img class="img-responsive" src="<?=get_the_post_thumbnail_url(15)?>" alt="Доктор">
-	<div class="text-block clearfix">
-		<p><?php $post=get_post(15); echo mb_substr($post->post_content,0,512).'...'?></p>
-		Читать далее</a>
+<div class="about-on-main">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-5">
+				<div class="img" style="background-image: url('<?= get_the_post_thumbnail_url(15) ?>')"></div>
+			</div>
+			<div class="col-sm-7">
+				<br class="visible-lg">
+				<br class="visible-lg">
+				<div class="text-block">
+					<p><?php $post = get_post(15);
+						setup_postdata($post);
+						the_content('') ?></p>
+					<a href="<?= get_permalink(15) ?>">Читать далее</a>
+				</div>
+			</div>
+			<?php wp_reset_postdata(); ?>
+		</div>
 	</div>
 </div>
 <!--конец НЕМНОГО О КРАСИВОЙ РАБОТЕ-->

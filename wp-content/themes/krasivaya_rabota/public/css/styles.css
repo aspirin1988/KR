@@ -428,8 +428,8 @@ header {
 /* конец АНТИВОЗРАСТНАЯ КОСМЕТОЛОГИЯ */
 /* начало НЕМНОГО О КРАСИВОЙ РАБОТЕ (раздел главной) */
 .about-on-main {
-  padding: 5px 0;
-  position: relative; }
+  padding: 15px 0;
+  background-color: rgba(121, 190, 119, 0.48); }
   .about-on-main h3 {
     margin-top: 10px;
     text-align: center;
@@ -441,27 +441,16 @@ header {
         display: block; } }
     .about-on-main h3 a {
       border-bottom: 2px solid black; }
-  @media (max-width: 992px) {
-    .about-on-main img {
-      margin: 0 auto; } }
+  .about-on-main .img {
+    border-radius: 5px;
+    height: 350px;
+    background: 50% 10%/cover; }
   .about-on-main .text-block {
+    border-radius: 5px;
     background-color: rgba(121, 190, 119, 0.7);
-    padding: 55px 35px 15px;
+    padding: 25px 35px 55px;
     line-height: 1.4;
-    text-align: justify;
-    position: absolute;
-    width: 850px;
-    top: 70px;
-    right: 0; }
-    @media (max-width: 1200px) and (min-width: 992px) {
-      .about-on-main .text-block {
-        padding: 25px 15px 15px;
-        width: 650px; } }
-    @media (max-width: 992px) {
-      .about-on-main .text-block {
-        position: static;
-        width: 100%;
-        padding: 15px; } }
+    text-align: justify; }
     .about-on-main .text-block a {
       float: right;
       text-transform: uppercase;
